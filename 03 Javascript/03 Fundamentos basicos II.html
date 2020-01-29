@@ -1,0 +1,227 @@
+<html>
+<head>
+	<title>Fundamentos basicos II</title>
+</head>
+<body>	
+    <script type="text/javascript">
+    
+		console.log("Ejercicio 1:")
+		function grande(x){
+			for(i=0;i<x.length;i++){
+				if(x[i]>0){
+					x[i]='Grande'
+				}
+			}
+		return x
+		}
+		x = grande([5,-2,4,-1]);
+        console.log(x);
+
+
+		console.log("Ejercicio 2:")
+		function return_print(x){
+			min=x[0]
+			max=x[0]
+			for(i=0;i<x.length;i++){
+				if (x[i]>max){
+					max=x[i]
+				}
+				else if(x[i]<min){
+					min=x[i]
+				}
+			}
+        return max
+		}
+		x = return_print([5,2,4,-1]);
+        console.log(x);
+        console.log(min);
+
+
+        console.log("Ejercicio 3:")
+        z=[]
+        function primerimpar(x){
+            console.log(x[x.length-2]);
+			for(i=0;i<x.length;i++){
+				if(x[i]%2!=0){
+                    z.push(x[i])
+                }
+			}
+		return z[0]
+		}
+		x = primerimpar([1,-5,2,0,4,10,1]);
+        console.log(x);
+        
+
+		console.log("Ejercicio 4:")
+        function doblevision(x){
+			for(i=0;i<x.length;i++){
+				x[i]=x[i]*2
+			}
+		return x
+		}
+		x = doblevision([5,2,4,1]);
+        console.log(x);
+
+
+        console.log("Ejercicio 5:")
+        function contarpositivos(x){
+            positivos=0
+            for(i=0;i<x.length;i++){
+                if(x[i]>0){
+                    positivos = positivos+1
+                }
+            }
+            x.pop();
+            x.push(positivos);
+        return x
+        }
+        x = contarpositivos([-1,1,2,4,1,1]) ;
+        console.log(x);
+
+
+        console.log("Ejercicio 6:")
+		function consecutivos(x){
+			z=[]
+			h=[]
+			contar1=0
+			contar2=0
+            for (var i=0; i<x.length; i++) {
+                if(x[i]%2==0){
+					contar1=contar1+1	
+					z.push(contar1)	
+				}
+				else if(x[i]%2!=0){
+					contar1=0
+					z.push(contar1)
+				}
+			 }
+			for(var i=0;i<z.length;i++){ 
+			 if (z[i]%3==0 && z[i]!=0){
+				console.log("Es para bien")
+			}
+
+			}
+			for (var i=0; i<x.length; i++) {
+                if(x[i]%2!=0){
+					contar2=contar2+1	
+					h.push(contar2)	
+				}
+				else if(x[i]%2==0){
+					contar2=0
+					z.push(contar2)
+				}
+			 }
+			for(var i=0;i<h.length;i++){ 
+			 if (h[i]%3==0 && h[i]!=0){
+				console.log("Que imparcial")
+			}
+			}
+		}
+		a = consecutivos([1,2,3,3,3,3,3,3,4,4,4,1,2,4,4,4]);
+		console.log(a); 
+
+
+        console.log("Ejercicio 7:")
+        function incrementaimpares(x){
+            for(i=0;i<x.length;i++){
+				if(x[i]%2!=0){
+                    x[i]=x[i]+1
+                 }
+            }
+        return x
+		}
+        x = incrementaimpares([-1,1,2,4,1,3,5,2,1]);
+        console.log(x);
+
+
+        console.log("Ejercicio 8:")
+        function longitudprevia(x){
+            z=[]
+            y=0
+            for(i=0; i<x.length; i++){
+                y=x[i].length
+                z.push(y)
+            }
+        return z
+        }
+        x = longitudprevia(['Dojo','programar','Hola']);
+        console.log(x);
+
+
+        console.log("Ejercicio 9:")
+        function incrementa7(x){
+            for(i=0;i<x.length;i++){
+                    x[i]=x[i]+7
+            }
+        return x
+		}
+        x = incrementa7([-1,1,2,4,1,3,5,2,1]);
+        console.log(x);
+
+
+        console.log("Ejercicio 10:")
+        function invierte(x){
+          
+        }
+        x = invierte([1,2,3,4]);
+        console.log(x);
+
+
+
+        console.log("Ejercicio 11:")
+        function perspectivanegativa(x){
+            z=[]
+            for(i=0;i<x.length;i++){
+                if(x[i]>0){
+                    x[i]=-x[i]
+                    z.push(x[i])
+                }
+                else if(x[i]<0){
+                    x[i]=x[i]
+                    z.push(x[i])
+                }
+            }
+        return z
+        }
+        x=perspectivanegativa([1,-2,2,3,4]);
+        console.log(x);
+
+
+        console.log("Ejercicio 12:")
+        function yummy(x){
+            for(i=0;i<x.length;i++){
+                if(x[i]=='comida'){
+                    y='yummy'
+                    break;
+                }
+                else if(x[i]!='comida'){
+                    y='tengo hambre'
+                }
+            }
+        return y
+        }
+        console.log(yummy(['comid',2,'dojo','comida']));
+        console.log(yummy(['hola','chao',2]));
+
+
+        console.log("Ejercicio 13:")
+        function cambiaHaciaElCentro(x){
+        
+        }
+        x=cambiaHaciaElCentro([True,42,'Ada',2,'pizza']);
+        console.log(x);
+        
+
+        console.log("Ejercicio 14:")
+        function escalaArray(x,y){
+            for(i=0;i<x.length;i++){
+                x[i]=x[i]*y
+            }
+        return x    
+        } 
+        x = escalaArray([3,2,3],4);
+        console.log(x);
+
+	</script>
+</body>
+</html>
