@@ -1,0 +1,198 @@
+<html>
+<head>
+	<title>Fundamentos basicos</title>
+</head>
+<body>	
+	<script type="text/javascript">
+		console.log("Ejercicio 1:")
+		function unoal255(x){
+			h=[];
+			x=0;
+			while(x<255){
+				x=x+1;
+				h.push(x)
+			}
+			return h
+		}
+		x = unoal255();
+        console.log(x);
+
+
+		console.log("Ejercicio 2:")
+		function sumapares1000(){
+			h=[];
+			y=0;
+			sum=0
+			while(y<1000){
+				y=y+2;
+				sum=sum+y
+			}
+			return sum
+		}
+		x = sumapares1000();
+        console.log(x);
+		
+
+		console.log("Ejercicio 3:")
+		function sumaimpares(){
+			h=[];
+			y=1;
+			sum=0
+			while(y<5000){
+				y=y+2;
+				sum=sum+y
+			}
+			return sum
+		}
+		x = sumaimpares();
+        console.log(x);
+		
+
+		console.log("Ejercicio 4:")
+		function sumaarray(x){
+			sum=0
+			for(i=0;i<x.length;i++){
+				sum=sum+x[i]
+			}
+		return sum
+		}
+		x = sumaarray([1,2,4,-1]);
+		console.log(x)
+
+
+		console.log("Ejercicio 5:")
+		function elmayor(x){
+			max=x[0]
+			for(i=0;i<x.length;i++){
+				if(x[i]>max){
+					max=x[i];
+				}
+				else if(x[i]<max){
+					max=max
+				}
+			}
+		return max
+		}
+		x = elmayor([-5,-2,-4,-1]);
+		console.log(x)
+
+
+		console.log("Ejercicio 6:")
+		function media(x){
+			sum=0
+			for(i=0;i<x.length;i++){
+				sum=sum+x[i]
+			}
+			med=sum/x.length;
+		return med
+		}
+		x = media([5,2,4,1]);
+		console.log(x)
+
+
+		console.log("Ejercicio 7:")
+		function impareshasta50(){
+			h=[];
+			x=-1;
+			while(x<49){
+				x=x+2;
+				h.push(x)
+			}
+			return h
+		}
+		x = impareshasta50();
+        console.log(x);
+
+
+		console.log("Ejercicio 8:")
+		function mayorqueY(x,y){
+			z=[]
+			
+			for(i=0;i<x.length;i++){
+				if(y<x[i]){
+					z.push(x[i])
+				}
+			}
+		return z.length
+		}
+		x = mayorqueY([5,2,4,1,10,11,-1,-4],3);
+        console.log(x);
+
+
+		console.log("Ejercicio 9:")
+		function cuadrados(x){
+			for(i=0;i<x.length;i++){
+				x[i]=x[i]*x[i]
+			}
+		return x
+		}
+		x = cuadrados([5,2,4,1]);
+        console.log(x);
+
+
+		console.log("Ejercicio 10:")
+		function negativos(x){
+			for(i=0;i<x.length;i++){
+				if(x[i]<0){
+					x[i]=0
+				}
+			}
+		return x
+		}
+		x = negativos([5,-2,4,-1]);
+        console.log(x);
+
+
+		console.log("Ejercicio 11:")
+		function max_min_avg(x){
+			min=x[0]
+			max=x[0]
+			sum=0
+			z=[]
+			for(i=0;i<x.length;i++){
+				if (x[i]>max){
+					max=x[i]
+				}
+				else if(x[i]<min){
+					min=x[i]
+				}
+				sum=sum+x[i];
+				avg=sum/x.length;
+			}
+			z.push(max)
+			z.push(min)
+			z.push(avg);
+		return z
+		}
+		x = max_min_avg([5,2,4,-1]);
+        console.log(x);
+
+
+		console.log("Ejercicio 12:")
+		function intercambio(x){
+			h=[];
+			while(x.length>0){
+			y=x.pop();
+			h.push(y)
+			}
+		return h
+		}
+		x = intercambio([1,5,10,-2]);
+        console.log(x);
+
+		
+		console.log("Ejercicio 13:")
+		function numerostring(x){
+			for(i=0;i<x.length;i++){
+				if(x[i]<0){
+					x[i]='Dojo'
+				}
+			}
+		return x
+		}
+		x = numerostring([5,-2,4,-1]);
+        console.log(x);
+
+	</script>
+</body>
+</html>
