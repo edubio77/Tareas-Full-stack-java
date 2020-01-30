@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title>Fundamentos basicos II</title>
+</head>
+<body>	
+    <script type="text/javascript">
+        console.log("PARTE 1")
+		console.log("Ejercicio 1:")
+        function sigma(x){
+            sum=0
+            for(i=0;i<x+1;i++){
+                sum=sum+i
+            }
+        return sum
+        }
+        x=sigma(5)
+        console.log(x)
+		
+
+		console.log("Ejercicio 2:")
+        function factorial(x){
+            num=1
+            fac=1
+            for(i=1;i<x+1;i++){
+                num=i
+                fac=num*fac
+            }
+        return fac
+        }
+        x=factorial(3)
+        console.log(x)
+
+
+        console.log("Ejercicio 3:")
+        function fibonacci(x){
+      
+        }
+        x=fibonacci(2)
+        console.log(x)
+    
+
+		console.log("Ejercicio 4:")
+        function penultimo(x){
+            x.pop()
+        return x.pop()
+        }
+        x=penultimo([5,2,3,6,4,9,7])
+        console.log(x)
+
+
+        console.log("Ejercicio 5:")
+        function N_ultimo(x,y){
+            for(i=1;i<y;i++){
+                y[i]=x.pop(y)
+            }
+        return x.pop()
+        }
+        x=N_ultimo([5,2,3,6,4,9,7],3)
+        console.log(x)
+
+
+        console.log("Ejercicio 6:")
+        function segundomasgrande(x){
+            x.sort()
+        return x[1]
+        }
+        y=segundomasgrande([42,1,4,3.14,7])
+        console.log(y)
+
+
+        console.log("Ejercicio 7:")
+        function dobleproblema(x){
+            h=[];
+			while(x.length>0){
+			y=x.pop();
+			h.push(y)
+			h.push(y)
+			}
+			z=[];
+			while(h.length>0){
+			y=h.pop();
+			z.push(y)
+			}
+			return z
+        }
+        x=dobleproblema([4, "Ulysses", 42, false])
+        console.log(x)
+   
+        console.log("PARTE 2")
+        console.log("Ejercicio 1: Fibonacci")
+        function fibonacci(x){ 
+            if(x == 1 || x == 2){
+                return 1;    
+            } 
+        sum1=1;
+        sum2=1
+        fibonacci=1
+            for(i=3;i<=x;i++){
+                fibonacci = sum1 + sum2;             
+                sum1 = sum2;
+                sum2 = fibonacci;
+            }  
+        return fibonacci
+        }
+        x=fibonacci(6)
+        console.log(x)   
+	</script>
+</body>
+</html>
