@@ -17,7 +17,7 @@
         console.log(x)
 		
 
-		console.log("Ejercicio 2:")
+	console.log("Ejercicio 2:")
         function factorial(x){
             num=1
             fac=1
@@ -32,14 +32,28 @@
 
 
         console.log("Ejercicio 3:")
-        function fibonacci(x){
-      
+        function fibonacci(x){ 
+	    if(x == 0){
+                return 0;    
+            } 
+            if(x == 1 || x == 2){
+                return 1;    
+            } 
+        sum1=1;
+        sum2=1
+        fibonacci=1
+            for(i=3;i<=x;i++){
+                fibonacci = sum1 + sum2;             
+                sum1 = sum2;
+                sum2 = fibonacci;
+            }  
+        return fibonacci
         }
-        x=fibonacci(2)
+        x=fibonacci(7)
         console.log(x)
+	    
     
-
-		console.log("Ejercicio 4:")
+	console.log("Ejercicio 4:")
         function penultimo(x){
             x.pop()
         return x.pop()
@@ -88,22 +102,20 @@
    
         console.log("PARTE 2")
         console.log("Ejercicio 1: Fibonacci")
-        function fibonacci(x){ 
+	function fib_rec(x){ 
+            if (x == 0) {
+                return 0;
+            }
             if(x == 1 || x == 2){
                 return 1;    
             } 
-        sum1=1;
-        sum2=1
-        fibonacci=1
-            for(i=3;i<=x;i++){
-                fibonacci = sum1 + sum2;             
-                sum1 = sum2;
-                sum2 = fibonacci;
-            }  
-        return fibonacci
+            else if (x>2){
+                return fib_rec(x-1) + fib_rec(x-2);
+            }
         }
-        x=fibonacci(6)
-        console.log(x)   
+        x=fib_rec(7);
+        console.log(x);
+         
 	</script>
 </body>
 </html>
