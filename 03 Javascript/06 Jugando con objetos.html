@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jugando con objetos</title>
+</head>
+<body>
+
+    <script>
+    
+    var users = [{name: "Michael", age:37}, 
+                 {name: "John", age:30}, 
+                 {name: "David", age:27}
+    ];
+    //PRINT LOG EDAD JOHN
+    console.log(users[1].name)
+
+    //PRINT LOG PRIMER OBJETO
+    console.log(users[0].name)
+
+    //FOR LOOP
+
+    for (var i = 0; i<users.length; i ++){
+        console.log(users[i].name+""+"-"+""+users[i].age)
+    }
+
+    </script>
+</body>
+</html>
