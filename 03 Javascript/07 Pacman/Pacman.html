@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pacman Demo</title>
+	<style type="text/css">
+		body{
+			background-color:black;
+			margin:0px;
+		}
+		.row div{
+			width: 20px;
+			height: 20px;
+			display:inline-block;
+			margin-top:-2px;
+			margin-bottom:-2px;
+			
+		}
+		.ladrillo{
+			background-color: blue;
+			
+		}
+		.moneda{
+			background: url('moneda.gif');
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.nada{
+            background-color: black;
+		}
+		#pacman{
+			background: url('pacman.gif');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			margin-bottom: 5px;
+		}
+		#Puntaje{
+			border:1px solid white;
+			background-color: rgb(31, 153, 71);
+			width: 140px;
+			height: 30px;
+			color:white;
+			padding:7px;
+			text-align:center;
+			font-size: 22px;
+			font-weight: bolder;
+			position: absolute;
+			top:350px;
+			left:220px;			
+		}
+		.cereza{
+			background: url('Cereza.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+
+ 	<div id="container">
+ 		<div id="mundo"></div>
+ 		<div id="pacman"></div>
+ 		<div id="Score">
+			<div id="Puntaje">0</div>
+			<p>puntos</p>
+		</div>
+ 	</div>
+
+	<script type="text/javascript">
+	var mundo = [
+		[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
+		[2,1,1,2,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,1,2],
+		[2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+		[2,2,1,2,1,1,2,1,1,2,1,1,2,1,2,1,1,2,1,2,2,1,1,2,1,1,2,1,2,2],
+		[2,1,1,2,2,1,2,1,1,1,2,2,2,2,2,1,1,2,1,1,1,2,1,1,2,1,2,1,1,2],
+		[2,2,1,2,1,1,2,1,2,1,1,1,1,2,2,2,2,2,1,2,1,1,1,1,2,1,2,1,2,2],
+		[2,1,1,2,2,1,2,1,2,2,2,1,1,1,1,1,1,1,1,2,2,2,2,1,2,1,1,1,1,2],
+		[2,2,1,1,1,1,1,1,2,1,1,1,2,1,2,1,2,2,1,1,2,1,1,1,2,1,2,1,2,2],
+		[2,1,1,2,1,1,2,1,2,1,2,1,2,3,2,1,1,2,1,1,2,1,2,1,1,1,2,1,1,2],
+		[2,2,1,2,2,1,2,2,1,2,2,1,2,2,2,1,2,2,1,2,2,1,1,1,2,1,2,1,2,2],
+		[2,1,1,2,1,1,2,1,1,1,1,1,1,0,1,1,1,2,1,1,2,2,1,2,2,2,2,1,1,2],
+		[2,2,1,2,2,1,1,1,1,2,2,2,2,2,1,2,1,2,1,2,1,1,1,1,2,1,2,1,2,2],
+		[2,1,1,2,1,1,2,1,1,1,1,2,1,1,1,2,2,2,2,2,1,2,1,1,2,1,1,1,1,2],
+		[2,2,1,2,2,2,2,2,1,2,1,2,1,2,2,2,1,2,1,2,2,1,1,2,2,2,2,1,2,2],
+		[2,1,1,1,1,1,1,1,1,1,1,2,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+		[2,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,2,1,1,2],
+		[2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
+	];
+	
+	//objeto puntaje y
+	var Puntaje = 0;
+
+	//objeto pacman
+	var pacman = {
+		x: 13,
+		y: 10
+	}
+
+	//creacion del mundo - ladrillos, monedas y cereza
+	function displaymundo(){
+		var output = '';
+
+		for(var i=0; i<mundo.length; i++){
+			output =output+ "\n<div class='row'>\n";
+			for(var j=0; j<mundo[i].length; j++){
+				if(mundo[i][j] == 2)
+					output =output+ "<div class='ladrillo'></div>";
+				else if(mundo[i][j] == 1)
+					output =output+ "<div class='moneda'></div>";
+				else if(mundo[i][j] == 3)
+					output =output+ "<div class='cereza'></div>";
+				else if(mundo[i][j] == 0)
+					output =output+ "<div class='nada'></div>";
+			}
+			output =output+ "\n</div>";
+		}
+		document.getElementById('mundo').innerHTML = output;
+	}
+	displaymundo();
+
+	//funcion pacman
+	function displayPacman(){
+		document.getElementById('pacman').style.top = pacman.y*19.8+"px";
+		document.getElementById('pacman').style.left = pacman.x*20+"px";
+	}
+	displayPacman();
+
+	//PUNTAJE
+	function displayPuntaje(){
+		document.getElementById('Puntaje').innerHTML = Puntaje+" "+"puntos";
+	}
+	displayPuntaje();
+
+	//FUNCIONES DE MOVIMIENTO Y ROTACION PACMAN
+	//ARRIBA    = 40 ABAJO     = 38 IZQUIERDA = 37 DERECHA   = 39
+	document.onkeydown = function(e){	
+		if(e.keyCode == 37 && mundo[pacman.y][pacman.x-1] != 2)
+			pacman.x--; 
+		else if(e.keyCode == 38 && mundo[pacman.y-1][pacman.x] != 2)
+			pacman.y--;
+		else if(e.keyCode == 39 && mundo[pacman.y][pacman.x+1] != 2)
+			pacman.x++;
+		else if(e.keyCode == 40 && mundo[pacman.y+1][pacman.x] != 2)
+			pacman.y++;
+		
+		//pacman rota
+		if (e.keyCode == 37) document.getElementById('pacman').style.transform = "rotate(-180deg)";
+		else if(e.keyCode == 38) document.getElementById('pacman').style.transform = "rotate(-90deg)";
+		else if(e.keyCode == 39) document.getElementById('pacman').style.transform = "none";
+		else if(e.keyCode == 40) document.getElementById('pacman').style.transform = "rotate(90deg)";
+
+		//Comerse la cereza y monedas
+		if (mundo[pacman.y][pacman.x] == 3) {
+			mundo[pacman.y][pacman.x] = 0;
+			Puntaje=Puntaje+50;
+		}
+		else if (mundo[pacman.y][pacman.x] == 1) {
+			mundo[pacman.y][pacman.x] = 0;
+			Puntaje=Puntaje+5;		
+		}
+		displayPacman();
+		displaymundo();
+		displayPuntaje();
+	}
+	</script>
+</body>
+</html>
