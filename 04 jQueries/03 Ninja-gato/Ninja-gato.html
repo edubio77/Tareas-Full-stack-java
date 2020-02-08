@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja-gato</title>
+    
+    <style>
+        body *{
+	        padding: 5px;
+        }
+        img{
+            display: block;
+            width: 300px;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </script>
+
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            var cambio = function () {
+                var a = $(this);
+                var nueva = a.data('alt-src');
+                a.data('alt-src', a.attr('src'));
+                a.attr('src', nueva);
+                }
+            $(function () {
+                $('img').click(cambio, cambio);
+                });
+            });
+    </script>
+
+</head>
+<body>
+        <img id="00" src="ninja0.png" data-alt-src="cat0.png">
+        <img id="01" src="ninja1.png" data-alt-src="cat1.png">
+        <img id="02" src="ninja2.png" data-alt-src="cat2.png">
+        <img id="03" src="ninja3.png" data-alt-src="cat3.png">
+        <img id="04" src="ninja4.png" data-alt-src="cat4.png">
+</body>
+</html>
