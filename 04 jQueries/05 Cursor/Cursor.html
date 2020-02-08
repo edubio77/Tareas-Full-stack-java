@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor</title>
+    
+    <style>
+        body *{
+	        padding: 5px;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </script>
+
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            var cambio = function () {
+                var a = $(this);
+                var nueva = a.data('alt-src');
+                a.data('alt-src', a.attr('src'));
+                a.attr('src', nueva);
+                }
+            $(function () {
+                $('img').hover(cambio, cambio);
+                });
+            });
+    </script>
+
+</head>
+<body>
+        <img src="alemania.jpg" data-alt-src="holanda.jpg">
+        <img src="canada.jpg" data-alt-src="noruega.jpg">
+        <img src="china.jpg" data-alt-src="rusia.jpeg">
+        <img src="finlandia.jpg" data-alt-src="suecia.jpg">
+</body>
+</html>
