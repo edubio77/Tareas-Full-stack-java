@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            padding:20px;
+        }
+        #mundo{
+            width: 900px;
+        }
+        #row1{ 
+            align-items: center;
+            display: inline-block;
+        }
+        #row2{
+            align-items: center;
+            display: inline-block;
+        }
+        img{
+            width: 220px;
+            height: 220px;
+            margin: 5px;
+            border-radius: 7px;
+            border-style: solid;
+        }
+        #boton{
+            width: 140px;
+            padding: 5px 20px;
+            margin:1px solid black;
+            background-color: blue;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    </script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('img').show(700);
+            });
+            $('img').click(function(){
+                $(this).hide(700);
+            });          
+        })
+    </script>
+</head>
+<body>
+    <h1>Haz click en el lugar del mundo que te gustaría visitar primero</h1>
+    <div id="mundo"></div>
+        <div id="row1">
+            <img id="i01" src="alemania.jpg">
+            <img id="i02" src="canada.jpg">
+            <img id="i03" src="china.jpg">
+            <img id="i04" src="finlandia.jpg">
+        </div>
+        <div id="row2">
+            <img id="i05" src="holanda.jpg">
+            <img id="i06" src="noruega.jpg">
+            <img id="i07" src="rusia.jpeg">
+            <img id="i08" src="suecia.jpg">
+        </div>
+    </div>
+    <br>
+    <button id="boton">Elegir otra vez</button>
+</body>
+</html>
