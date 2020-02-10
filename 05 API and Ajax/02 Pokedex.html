@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon</title>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+    <script type="text/javascript">
+
+    function pokemon(){
+        for(var i=1; i<20; i++){
+            $('#mundo').append("<img id="+i+" src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png'>");
+        }
+    }
+
+    $(document).ready(function() {
+    pokemon()
+    $('img').click(function(){
+        var id = this.id
+        $.get("https://pokeapi.co/api/v2/pokemon/"+id, function(res) {
+            var html_str= "";
+            html_str += "<h1>"+res.name+"</h1>";
+            html_str += "<img id="+id+" src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+id+".png'>";
+            html_str +="<ul>"; 
+                html_str +="<li> Peso: " + res.weight + "</li>";
+                html_str +="<li> Altura: " + res.height + "</li>";
+            html_str += "</ul>";
+            $("#tupokemon").html(html_str);
+            });
+        });
+    });
+
+   $.get("https://pokeapi.co/api/v2/pokemon/1/", function(res) {
+                     console.log(res.name);
+                 }, "json");
+    </script> 
+    <style>
+        body{
+            padding:5px;
+            width:1300px;
+        }
+        #mundo{
+            width:1000px;
+            display: inline-block;
+            vertical-align: top;
+            border-style: solid;
+
+        }
+        #tupokemon{
+            width:250px;
+            height: 300px;
+            display:inline-block;
+            vertical-align: top;
+            border-style: solid;
+        }
+        h1{
+            text-align: center;
+        }
+        #tupokemon img{
+            margin-left:80px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mundo"></div>
+    <div id="tupokemon">
+    </div>
+</body>
+</html>
+
+
+<!-- fuente https://github.com/PokeAPI/sprites/tree/master/sprites/pokemon -->
