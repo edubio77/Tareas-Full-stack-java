@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <title>API Weather</title>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+    <script>
+        $(document).ready(function() {
+           $('form').submit(function(){
+            // your code here (build up your url)
+            //ejemplos de como usar la api http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}
+            var ciudad = $('input:text[name=ciudad]').val();
+            $.get('http://api.openweathermap.org/data/2.5/weather?q='+ciudad+'&units=imperial&appid=27f545313bc713e209e31926699352f7', function(res){
+                var html_str = '';
+                var far = res.main.temp
+                var celcius_1 = (far-(32))*5/9
+                var celcius = celcius_1.toFixed()
+                html_str += "<h3>La temperatura en "+ciudad+" es de "+celcius+" grados Celcius</h3>";
+                $('.temperatura').html(html_str); 
+            }, 'json');
+            // don't forget to return false so the page doesn't refresh
+            return false;
+            })
+        });
+        //para consulta en consola
+        // $.get("http://api.openweathermap.org/data/2.5/weather?q=cunco&units=imperial&appid=27f545313bc713e209e31926699352f7", function(res) {
+        //              console.log(res);
+        //          }, "json");
+    </script>
+    <style>
+        body{
+            padding:5px;
+            width:700px;
+        }
+        .Clima{
+            margin:20px 20px;
+            border-style: solid;
+            width: 450px;
+            height: 600px;
+            background-image: url('clima.jpg');
+        }
+        .nombreciudad{
+            margin: 5px 5px;
+        }
+        #ciudad{
+            margin-left: 5px;
+        }
+        .submit{
+            margin: 5px 5px;
+        }
+        .temperatura{
+            text-align: center;
+            font-size: 20px;
+        }   
+    </style>
+</head>
+<body>
+<div class="Clima">
+    <form>
+        <label class="nombreciudad" for="city">Ciudad: 
+            <input id="ciudad" type="text" name="ciudad" />
+        </label>
+        <input class="submit" type="submit" name='Enviar'/>
+    </form>
+    <div class="temperatura"></div>
+</div>
+</body>
+</html>
