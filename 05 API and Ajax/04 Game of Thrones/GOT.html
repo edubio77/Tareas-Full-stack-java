@@ -1,0 +1,70 @@
+  
+<!doctype html>
+<html>
+<head>
+    <title>API Weather</title>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+    <script>
+        
+        function casas(){
+          $('#mundo').append("<img id="+15+" src='baratheon.png'>");
+          $('#mundo').append("<img id="+229+" src='lannister.jpg'>");
+          $('#mundo').append("<img id="+362+" src='stark.jpg'>");
+          $('#mundo').append("<img id="+378+" src='targaryen.jpg'>");
+        }
+
+    $(document).ready(function() {
+    casas()
+    $('img').click(function(){
+        var id = this.id
+        $.get("https://www.anapioficeandfire.com/api/houses/"+id, function(res) {
+            var html_str= "";
+            html_str += "<h2> Nombre: "+res.name+"</h2>"; 
+            html_str +="<h2> Words: "+res.coatOfArms + "</h2>";
+            html_str +="<h2> Titulo: "+res.titles[0]+","+res.titles[1]+","+res.titles[2]+"</h2>";
+            $(".detalles2").html(html_str);
+            });
+        });
+    });
+        //para consulta en consola
+        $.get("https://www.anapioficeandfire.com/api/houses/01", function(res) {
+                      console.log(res);
+                 }, "json");
+    </script>
+    <style>
+        body{
+            padding:5px;
+            width:1000px;
+        }
+        .casas{
+            width:1000px;
+        }
+        img{
+            display: inline-block;
+            vertical-align: top;
+            width:200px;
+            height: 150px;
+        }
+        .detalles{
+            width:480px;
+            height: 300px;
+            border: 5px solid black;
+            margin-left:200px;
+            padding:10px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="mundo">
+    </div>
+    <br>
+    <div class="detalles">
+        <h1>House details</h1>
+        <div class="detalles2"></div>
+    </div>
+</div>
+</body>
+</html>
