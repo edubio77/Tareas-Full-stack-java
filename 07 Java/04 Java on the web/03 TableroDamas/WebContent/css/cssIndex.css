@@ -1,0 +1,30 @@
+/* Eduardo Ceriani */
+@charset "UTF-8";
+
+body *{
+	padding: 0px;
+}
+#container {
+	width: 1100px;
+	margin: 0 auto;
+}
+h1 { 
+	font-size:22px;
+}
+.cuadrosblancos{
+	width: 40px;
+	height: 40px;
+	background-color:whitesmoke;
+	display:inline-block;
+	outline: 1px solid;
+}
+.cuadrosnegros{
+	width: 40px;
+	height: 40px;
+	background-color:black;
+	display:inline-block;
+	outline: 1px solid;
+}
+
+
+
