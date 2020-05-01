@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+#izquierda {
+        color: blue;
+        display:inline-block;
+        font-weight:bold;
+        font-size:30px;
+        width:150px;
+}
+
+#derecha {
+        color: blue;
+        display:inline-block;
+        font-weight:bold;
+        font-size:30px;
+        width:150px;
+}
+
+#container1{
+		color: blue;
+		font-size:20px;
+        width:150px;
+}
+
+#container2{
+		color: green;
+		font-size:20px;
+        width:150px;	
+}
+
